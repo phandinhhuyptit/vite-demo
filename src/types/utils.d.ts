@@ -9,7 +9,9 @@
  * Extract the array values into an union type
  *
  **/
-export type GetArrayValues<T extends Array<unknown>> = T extends Array<infer U> ? U : never;
+export type GetArrayValues<T extends Array<unknown>> = T extends Array<infer U>
+  ? U
+  : never;
 
 /**
  * Creates a record where every key is a string and every value is `T`
