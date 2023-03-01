@@ -20,7 +20,9 @@ function Login() {
 
   return (
     <div>
-      <button className="p-2 bg-sky-400" onClick={login}>Login</button>
+      <button className="p-2 bg-sky-400" onClick={login}>
+        Login
+      </button>
     </div>
   );
 }

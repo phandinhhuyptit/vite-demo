@@ -5,7 +5,7 @@ interface Props extends PropsWithChildren {}
 
 function Layout(props: Props) {
   const { children } = props;
-  useAuth() 
+  useAuth();
   return <div>{children}</div>;
 }
 
