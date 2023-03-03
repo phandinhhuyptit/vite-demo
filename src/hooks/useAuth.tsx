@@ -7,7 +7,7 @@ function useAuth() {
   const { state } = useAuthContext();
   const location = useLocation();
   const navigate = useNavigate();
-  const user = state?.authUser;
+  const user = state?.accessToken;
   const path = location.pathname;
 
   useEffect(() => {

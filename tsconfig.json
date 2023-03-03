@@ -20,7 +20,9 @@
       "@components/*": ["./components/*"],
       "@layout/*": ["./layout/*"],
       "@pages/*": ["./pages/*"],
-      "@type/*": ["./types/*"]
+      "@type/*": ["./types/*"],
+      "@schema/*": ["./schema/*"],
+      "@configs/*": ["./config/*"]
     }
   },
   "include": ["src"],

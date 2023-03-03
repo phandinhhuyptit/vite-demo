@@ -1,23 +1,25 @@
 import { IUser } from "@type/user";
-import React, { createContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
 type State = {
   authUser: IUser | null;
+  accessToken: string | null;
 };
-type Action = {
-  type: "SET_USER" | "RESET_USER";
-  payload: IUser | null;
+type Action<T> = {
+  type: "SET_USER" | "RESET" | "SET_TOKEN";
+  payload: T;
 };
 
-type Dispatch = (action: Action) => void;
-type SignIn = (user: IUser) => void;
+type Dispatch = (action: Action<any>) => void;
+type SignIn = (token : string) => void;
 type SignOut = () => void;
 
 type StateContextProviderProps = { children: React.ReactNode };
 
 const initialState: State = {
   authUser: null,
+  accessToken : null
 };
 
 const StateContext = React.createContext<
@@ -25,7 +27,7 @@ const StateContext = React.createContext<
   | undefined
 >(undefined);
 
-const stateReducer = (state: State, action: Action) => {
+const stateReducer = (state: State, action: Action<any>) => {
   switch (action.type) {
     case "SET_USER": {
       return {
@@ -33,10 +35,17 @@ const stateReducer = (state: State, action: Action) => {
         authUser: action.payload,
       };
     }
-    case "RESET_USER": {
+    case "RESET": {
       return {
         ...state,
-        authUser: action.payload,
+        authUser: null,
+        accessToken: null,
+      };
+    }
+    case "SET_TOKEN": {
+      return {
+        ...state,
+        accessToken: action.payload,
       };
     }
 
@@ -48,26 +57,26 @@ const stateReducer = (state: State, action: Action) => {
 
 const AuthProvider = ({ children }: StateContextProviderProps) => {
   const [state, dispatch] = React.useReducer(stateReducer, initialState);
-  const [storedValue, setValue] = useLocalStorage("user", state?.authUser);
+  const [storedValue, setValue] = useLocalStorage("access_token", state?.accessToken);
 
   useEffect(() => {
     dispatch({
-      type: "SET_USER",
+      type: "SET_TOKEN",
       payload: storedValue,
     });
   }, [storedValue]);
 
-  const signIn = (user: IUser) => {
-    setValue(user);
+  const signIn = (token: string) => {
+    setValue(token);
     dispatch({
-      type: "SET_USER",
-      payload: user,
+      type: "SET_TOKEN",
+      payload: token,
     });
   };
   const signOut = () => {
     setValue(null);
     dispatch({
-      type: "RESET_USER",
+      type: "RESET",
       payload: null,
     });
   };

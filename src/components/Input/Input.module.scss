@@ -1,0 +1,139 @@
+.container {
+    --box-shadow-input-hover: none;
+    --background-input-color: var(--color-f6f8fc);
+    --placeholder-input-color: var(--color-a4a4a4);
+    --text-input-color: var(--color-2c2c2c);
+    --border-input-color: transparent;
+    @apply relative;
+  
+    .input {
+      @apply rounded-[10px] w-full text-xs ease-linear duration-200 border-[1px];
+      transition-property: border, box-shadow;
+      background-color: var(--background-input-color);
+      color: var(--text-input-color);
+      box-shadow: var(--box-shadow-input-hover);
+      border-color: var(--border-input-color);
+  
+      &::placeholder {
+        color: var(--placeholder-input-color);
+      }
+  
+      &:hover {
+        --border-input-color: var(--color-f5f5f5);
+        --box-shadow-input-hover: var(--box-shadow-input);
+  
+        &::placeholder {
+          --placeholder-input-color: var(--color-6b6b6b);
+        }
+      }
+  
+      &:focus {
+        --border-input-color: var(--color-467aff);
+  
+        &::placeholder {
+          --placeholder-input-color: var(--color-6b6b6b);
+        }
+      }
+  
+      &:disabled {
+        --background-input-color: var(--color-f5f5f5);
+      }
+    }
+  
+    &.disabled {
+      @apply opacity-50 pointer-events-none;
+    }
+  
+    &.error {
+      --text-input-color: var(--color-a4a4a4);
+      .input {
+        --border-input-color: var(--color-ec5956);
+  
+        &:hover,
+        &:focus {
+          --border-input-color: var(--color-ec5956);
+        }
+      }
+    }
+  
+    &.secondary {
+      --background-input-color: var(--color-ffffff);
+      --text-input-color: var(--color-2c2c2c);
+      --border-input-color: var(--color-f5f5f5);
+    }
+  
+    &.default {
+      .input {
+        @apply h-10 px-4 py-2.5 text-sm;
+      }
+    }
+  
+    &.small {
+      .input {
+        @apply h-7 px-3 py-2 text-[10px] leading-3 rounded-md;
+      }
+    }
+  
+    &.large {
+      .input {
+        @apply h-11 px-4 py-2.5 text-sm;
+      }
+    }
+  
+    &.prefix {
+      .input {
+        @apply pl-[42px];
+      }
+  
+      .icon-prefix {
+        @apply absolute left-4 top-1/2 -translate-y-1/2 flex;
+  
+        svg {
+          @apply h-5 w-5;
+        }
+      }
+  
+      &.small {
+        .input {
+          @apply pl-9;
+        }
+  
+        .icon-prefix {
+          @apply left-3;
+        }
+  
+        svg {
+          @apply h-4 w-4;
+        }
+      }
+    }
+  
+    &.suffix {
+      .input {
+        @apply pr-[42px];
+      }
+  
+      .icon-suffix {
+        @apply absolute right-4 top-1/2 -translate-y-1/2 flex gap-2;
+  
+        svg {
+          @apply h-5 w-5;
+        }
+      }
+  
+      &.small {
+        .input {
+          @apply pr-9;
+        }
+  
+        .icon-suffix {
+          @apply right-3;
+  
+          svg {
+            @apply h-4 w-4;
+          }
+        }
+      }
+    }
+  }
+  

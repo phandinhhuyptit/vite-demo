@@ -1,0 +1,132 @@
+.btn {
+  --text-button-color: #fff;
+  --background-button-color: var(--color-222935);
+  --border-button-color: transparent;
+  --button-box-shadow: rgba(255, 255, 255, 0.3) 0px 0px 0px 3px inset;
+
+  @apply rounded-[10px] w-full text-sm font-medium truncate;
+  @apply flex justify-center items-center gap-2 cursor-pointer ease-linear duration-200;
+  transition-property: box-shadow;
+  color: var(--text-button-color);
+  background: var(--background-button-color);
+
+  &:hover {
+    box-shadow: var(--button-box-shadow);
+  }
+
+  &.default {
+    @apply py-3 px-6 h-10;
+  }
+
+  &.small {
+    @apply py-2 px-6 h-8 text-[13px];
+  }
+
+  &.inline {
+    @apply inline-flex w-auto;
+  }
+
+  &.primary {
+    --background-button-color: var(--gradient-purple-color);
+  }
+
+  &.secondary {
+    --background-button-color: var(--gradient-green-color);
+  }
+
+  &.royal-blue {
+    --text-button-color: var(--color-467aff);
+    --background-button-color: var(--color-dbe5ff);
+
+    &:hover {
+      --button-box-shadow: rgba(71, 123, 255, 0.1) 0 0 0 3px inset;
+    }
+  }
+
+  &.sea-green {
+    --text-button-color: var(--color-28adad);
+    --background-button-color: var(--color-e2f8f8);
+
+    &:hover {
+      --button-box-shadow: rgba(40, 173, 173, 0.1) 0 0 0 3px inset;
+    }
+  }
+
+  &.turquoise {
+    --text-button-color: var(--color-13ba9a);
+    --background-button-color: var(--color-defcf6);
+
+    &:hover {
+      --button-box-shadow: rgba(40, 173, 173, 0.1) 0 0 0 3px inset;
+    }
+  }
+
+  &.dark-turquoise {
+    --text-button-color: #ffffff;
+    --background-button-color: var(--color-28adad);
+
+    &:hover {
+      --button-box-shadow: rgba(255, 255, 255, 0.3) 0 0 0 3px inset;
+    }
+  }
+
+  &.alice-blue {
+    --text-button-color: var(--color-28adad);
+    --background-button-color: var(--color-f3f7ff);
+
+    &:hover {
+      --button-box-shadow: rgba(219, 229, 255, 0.6) 0 0 0 3px inset;
+    }
+  }
+
+  &.purple {
+    --text-button-color: var(--color-8f76fa);
+    --background-button-color: var(--color-ebe6fe);
+
+    &:hover {
+      --button-box-shadow: rgba(143, 118, 250, 0.1) 0 0 0 3px inset;
+    }
+  }
+
+  &.yellow {
+    --text-button-color: var(--color-ffc04e);
+    --background-button-color: var(--color-fff2db);
+
+    &:hover {
+      --button-box-shadow: rgba(255, 192, 78, 0.1) 0 0 0 3px inset;
+    }
+  }
+
+  &.red {
+    --text-button-color: var(--color-ec5956);
+    --background-button-color: var(--color-fbe0df);
+
+    &:hover {
+      --button-box-shadow: rgba(236, 89, 86, 0.1) 0 0 0 3px inset;
+    }
+  }
+
+  &.ghost-white {
+    --text-button-color: var(--color-1a1c25);
+    --background-button-color: var(--color-f6f8fc);
+
+    &:hover {
+      --button-box-shadow: #ecf3ff 0 0 0 3px inset;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    @apply pointer-events-none opacity-50;
+  }
+}
+
+html:global(#night-mode) {
+  .btn {
+    &.alice-blue {
+      &:hover {
+        --button-box-shadow: rgba(219, 229, 255, 0.1) 0 0 0 3px inset;
+      }
+    }
+  }
+}

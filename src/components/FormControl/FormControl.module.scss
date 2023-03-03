@@ -1,0 +1,67 @@
+.container {
+    position: relative;
+  
+    .label {
+      @apply text-left font-medium text-xs uppercase mb-2 block;
+      color: var(--color-a4a4a4);
+    }
+  
+    .error {
+      @apply text-xs mt-2 mb-0;
+      color: var(--color-ec5956);
+    }
+  
+    &:focus-within {
+      .error-bubble {
+        display: flex;
+      }
+    }
+  
+    .error-bubble {
+      position: absolute;
+      bottom: calc(100%); // 8px to make arrow at line + 4px spacing
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--color-2c2c2c);
+      max-width: 481px;
+      font-size: 12px;
+      padding: 8px;
+      display: none;
+      align-items: center;
+      background-color: var(--color-f6f8fc);
+      border-radius: 5px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-neutral-70);
+      @apply max-w-full w-max;
+  
+      .error-icon {
+        @apply self-start mt-[3px];
+        svg {
+          width: 14px;
+          height: 14px;
+        }
+  
+        &.warning {
+          svg {
+            fill: var(--color-ffc04e);
+          }
+        }
+        margin-right: 4px;
+      }
+  
+      .error-arrow {
+        position: absolute;
+        bottom: -3px; // to make arrow at the bottom
+        left: 50%;
+        transform: translate(-50%, 50%);
+  
+        svg {
+          width: 14px;
+          height: 8px;
+          transform: rotate(180deg);
+          fill: var(--color-f6f8fc);
+        }
+      }
+    }
+  }
+  

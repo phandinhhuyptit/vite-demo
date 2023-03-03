@@ -8,3 +8,14 @@ export interface IUser {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface IUserResponse {
+  jwt: string;
+  user: IUser;
+  status: string;
+}
+
+export interface UserForm {
+  identifier: string;
+  password: string;
+}
