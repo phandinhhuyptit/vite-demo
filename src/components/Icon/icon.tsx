@@ -1,11 +1,11 @@
 'use client';
 
-import { HTMLAttributes } from 'react';
-import ICONS from './svgs';
-import styles from './icon.module.scss';
 import { IconName } from '@type/ui';
+import { HTMLAttributes } from 'react';
 
-/* eslint-disable-next-line */
+import styles from './icon.module.scss';
+import ICONS from './svgs';
+
 export interface IconProps extends HTMLAttributes<HTMLSpanElement> {
   name: IconName;
   title?: string;

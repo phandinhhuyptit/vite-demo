@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
+
 import styles from './Card.module.scss';
 
-/* eslint-disable-next-line */
 export interface CardProps extends PropsWithChildren {
   size?: 'small' | 'large';
   className?: string;

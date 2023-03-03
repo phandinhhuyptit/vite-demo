@@ -1,9 +1,9 @@
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/display-name */
+
 import { ComponentPropsWithoutRef, forwardRef, LegacyRef } from "react";
+
 import styles from "./button.module.scss";
 
-/* eslint-disable-next-line */
+
 
 export type ButtonComponentProps = ComponentPropsWithoutRef<"a"> &
   ComponentPropsWithoutRef<"button"> & {
@@ -30,7 +30,7 @@ export const Button = forwardRef<
 >(function (
   {
     children,
-    variant,
+    variant = "primary",
     className,
     btnSize = "default",
     element = "button",

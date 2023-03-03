@@ -1,7 +1,6 @@
 import { useAuthContext } from "provider/AuthorProvider";
 import React, { useEffect } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
-import { useUpdateEffect } from "usehooks-ts";
 
 function useAuth() {
   const { state } = useAuthContext();

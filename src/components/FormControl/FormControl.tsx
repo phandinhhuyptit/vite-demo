@@ -1,11 +1,10 @@
-/* eslint-disable react/react-in-jsx-scope */
+
 import { Icon } from "@components/Icon/icon";
 import { HTMLAttributes, PropsWithChildren, ReactNode } from "react";
 import { mergeClasses } from "utils/string";
 
 import styles from "./FormControl.module.scss";
 
-/* eslint-disable-next-line */
 export interface FormControlProps extends PropsWithChildren {
   label?: string;
   htmlFor?: string;

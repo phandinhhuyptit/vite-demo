@@ -1,5 +1,6 @@
 import { useAuth } from "hooks";
 import React, { PropsWithChildren } from "react";
+
 import styles from "./Layout.module.scss"
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props extends PropsWithChildren {}

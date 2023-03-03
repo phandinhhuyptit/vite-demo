@@ -95,3 +95,7 @@ export type SchemaUID = keyof Strapi.Schemas;
  * // 'foo'
  */
 export type Get<T, U extends keyof T> = T[U];
+
+
+
+

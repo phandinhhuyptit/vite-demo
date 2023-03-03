@@ -1,11 +1,11 @@
-/* eslint-disable react/prop-types */
+
+import { Icon } from "@components/index"
 import React, {
   forwardRef,
   InputHTMLAttributes,
   LegacyRef,
   ReactNode,
 } from "react";
-import { Icon } from "@components/index"
 import { mergeClasses } from "utils/string";
 
 import styles from "./Input.module.scss";
@@ -62,6 +62,5 @@ export const Input = forwardRef(
     );
   }
 );
-Input.displayName = "Input";
 
 export default Input;

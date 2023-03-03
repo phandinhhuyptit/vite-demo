@@ -18,6 +18,7 @@ module.exports = {
   rules: {
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "warn",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": "off"
   },
 };
