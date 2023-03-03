@@ -1,6 +1,6 @@
 import { useAuthContext } from "provider/AuthorProvider";
-import React, { useEffect } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function useAuth() {
   const { state } = useAuthContext();
