@@ -17,6 +17,8 @@ type SignOut = () => void;
 
 type StateContextProviderProps = { children: React.ReactNode };
 
+
+
 const initialState: State = {
   authUser: null,
   accessToken : null

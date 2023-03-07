@@ -1,0 +1,11 @@
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+
+  h2 {
+    @apply font-medium text-[22px] leading-6 pr-6;
+    color: var(--color-2c2c2c);
+  }
+}

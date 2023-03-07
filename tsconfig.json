@@ -22,7 +22,11 @@
       "@pages/*": ["./pages/*"],
       "@type/*": ["./types/*"],
       "@schema/*": ["./schema/*"],
-      "@configs/*": ["./config/*"]
+      "@configs/*": ["./config/*"],
+      "@services/*": ["./services/*"],
+      "@utils/*": ["./utils/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@hocs/*": ["./hocs/*"]
     }
   },
   "include": ["src"],

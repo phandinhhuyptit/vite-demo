@@ -1,0 +1,63 @@
+.modal-container {
+  --modal-color-background: var(--color-ffffff);
+  --modal-padding: 20px;
+  --modal-shadow: 8px 4px 20px rgba(107, 107, 107, 0.1);
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: calc(100% - 32px);
+  padding: var(--modal-padding);
+  background: var(--modal-color-background);
+  box-shadow: var(--modal-shadow);
+  border-radius: 16px;
+
+  // animation stuffs
+  animation: appear 150ms ease-in 1;
+  opacity: 0;
+  transform: translate(-50%, -55%);
+  transition: opacity 150ms linear, transform 150ms linear;
+  z-index: 2001;
+
+  &:global(.show) {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-close-button {
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: var(--modal-padding);
+    right: var(--modal-padding);
+    width: 20px;
+    height: 20px;
+  }
+  .close-icon {
+    svg {
+      path {
+        fill: #a4a4a4;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-container {
+    width: fit-content;
+    --modal-padding: 32px;
+  }
+}
+
+html:global(#night-mode) {
+  .modal-container {
+    --modal-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+}
