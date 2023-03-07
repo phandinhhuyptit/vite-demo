@@ -1,0 +1,30 @@
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  animation: fade 150ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transition: background 150ms linear;
+  z-index: 2000;
+
+  &:global(.show) {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  &:global(.transparent) {
+    background: transparent;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
+}

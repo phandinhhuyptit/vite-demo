@@ -1,0 +1,13 @@
+.body {
+  @apply bg-[#FFFFFF] justify-center;
+  .row {
+    &:hover {
+        background: #fafafa;
+      }
+    @apply grid grid-cols-6 p-4 text-sm cursor-pointer items-center;
+    border-bottom: 1px solid #f0f0f0;
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.header {
+    @apply bg-[#FAFAFA] grid grid-cols-6 p-4 justify-center;
+    & > div {
+        @apply font-semibold text-sm text-[#1E1E1E];
+    }
+}
